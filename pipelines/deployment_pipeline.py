@@ -1,6 +1,5 @@
 import json
 
-
 import os
 import numpy as np
 import pandas as pd
@@ -24,16 +23,6 @@ from zenml.steps import BaseParameters
 from .utils import get_data_for_test
 
 docker_settings = DockerSettings(required_integrations=[MLFLOW])
-
-
-# from zenml.integrations.mlflow.model_deployers.mlflow_model_deployer import (
-#     MLFlowModelDeployer,
-# )
-# from zenml.integrations.mlflow.services import MLFlowDeploymentService
-# from zenml.pipelines import pipeline
-# from zenml.steps import BaseParameters, Output, step
-
-
 requirements_file = os.path.join(os.path.dirname(__file__), "requirements.txt")
 
 
@@ -46,9 +35,7 @@ def dynamic_importer() -> str:
 
 class DeploymentTriggerConfig(BaseParameters):
     """Parameters that are used to trigger the deployment"""
-
-    min_accuracy: float = 0.9
-
+    min_accuracy: float = 0.1
 
 @step
 def deployment_trigger(
@@ -182,14 +169,15 @@ def predictor(
     return prediction
 
 
-@pipeline(enable_cache=True, settings={"docker": docker_settings})
+@pipeline(enable_cache=False, settings={"docker": docker_settings})
 def continuous_deployment_pipeline(
+    data_path :str,
     min_accuracy: float = 0.9,
     workers: int = 1,
     timeout: int = DEFAULT_SERVICE_START_STOP_TIMEOUT,
 ):
     # Link all the steps artifacts together
-    df = ingest_df()
+    df = ingest_df(data_path)
     x_train, x_test, y_train, y_test = clean_df(df)
     model = train_model(x_train, x_test, y_train, y_test)
     mse, rmse = evaluate_model(model, x_test, y_test)

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/Customer-Satisfaction-MLOps/mlruns/0/8c1d010549f247cf9551c9ba33b60b61/artifacts
+end_time: 1695567165524
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8c1d010549f247cf9551c9ba33b60b61
+run_name: amusing-gull-577
+run_uuid: 8c1d010549f247cf9551c9ba33b60b61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695567155106
+status: 3
+tags: []
+user_id: '91875'

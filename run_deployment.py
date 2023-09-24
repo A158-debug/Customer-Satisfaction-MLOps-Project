@@ -34,7 +34,7 @@ DEPLOY_AND_PREDICT = "deploy_and_predict"
     default=0.92,
     help="Minimum accuracy required to deploy the model",
 )
-def main(config: str, min_accuracy: float):
+def run_deployment(config: str, min_accuracy: float):
     """Run the MLflow example pipeline."""
     # get the MLflow model deployer stack component
     mlflow_model_deployer_component = MLFlowModelDeployer.get_active_model_deployer()
@@ -44,6 +44,7 @@ def main(config: str, min_accuracy: float):
     if deploy:
         # Initialize a continuous deployment pipeline run
         continuous_deployment_pipeline(
+            data_path = "D:\Projects\MLOps\Customer-Satisfaction-MLOps\data\olist_customers_dataset.csv",
             min_accuracy=min_accuracy,
             workers=3,
             timeout=60,
@@ -98,6 +99,6 @@ def main(config: str, min_accuracy: float):
 
 
 if __name__ == "__main__":
-    main()
+    run_deployment()
 
 

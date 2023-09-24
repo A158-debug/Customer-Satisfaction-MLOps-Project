@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/Customer-Satisfaction-MLOps/mlruns/0/a11a4adef7194ab9b3d2f60aa75cdafa/artifacts
+end_time: 1695564087197
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a11a4adef7194ab9b3d2f60aa75cdafa
+run_name: bittersweet-slug-551
+run_uuid: a11a4adef7194ab9b3d2f60aa75cdafa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695564060084
+status: 3
+tags: []
+user_id: '91875'

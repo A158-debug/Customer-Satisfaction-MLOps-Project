@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/Customer-Satisfaction-MLOps/mlruns/0/25363461a00c4fa3a1e990e8d8ef5a73/artifacts
+end_time: 1695567503782
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 25363461a00c4fa3a1e990e8d8ef5a73
+run_name: wise-newt-523
+run_uuid: 25363461a00c4fa3a1e990e8d8ef5a73
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695567496806
+status: 3
+tags: []
+user_id: '91875'
