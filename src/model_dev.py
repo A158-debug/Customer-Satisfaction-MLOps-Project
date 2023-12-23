@@ -6,7 +6,7 @@ class Model(ABC):
     """ 
     Abstract class for model 
     """
-    
+
     @abstractmethod
     def train(self, X_train, y_train):
         pass

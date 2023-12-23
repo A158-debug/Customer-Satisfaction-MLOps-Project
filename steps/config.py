@@ -5,3 +5,4 @@ class ModelNameConfig(BaseParameters):
     Model name configuration.
     """
     model_name: str = "LinearRegression"
+    fine_tuning: bool = False

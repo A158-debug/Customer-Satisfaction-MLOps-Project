@@ -6,14 +6,23 @@ from zenml import step
 from typing import Tuple
 from typing_extensions import Annotated
 
+
+import os
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
+
 from src.evaluation import MSE, R2Score, RMSE
 from sklearn.base import RegressorMixin
 
-from zenml.client import Client
-experiment_tracker = Client().active_stack.experiment_tracker
+# from zenml.client import Client
+# experiment_tracker = Client().active_stack.experiment_tracker
 
 
-@step(experiment_tracker=experiment_tracker.name)
+# @step(experiment_tracker=experiment_tracker.name)
+@step
 def evaluate_model(model: RegressorMixin,
    X_test:pd.DataFrame,
    y_test:pd.DataFrame,
@@ -21,7 +30,6 @@ def evaluate_model(model: RegressorMixin,
    Annotated[float, "r2_score"],
    Annotated[float, "rmse"]
 ]:
-   
    """
       Evaluate the model.
       Returns --> None

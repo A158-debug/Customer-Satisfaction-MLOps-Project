@@ -30,6 +30,8 @@ class DataPreProcessingStrategy(DataStrategy):
                     "order_delivered_customer_date",
                     "order_estimated_delivery_date",
                     "order_purchase_timestamp",
+                    "order_item_id",
+                    "customer_zip_code_prefix"
                 ], 
                 axis=1)
             data["product_weight_g"].fillna(data["product_weight_g"].median(), inplace=True)
@@ -38,9 +40,8 @@ class DataPreProcessingStrategy(DataStrategy):
             data["product_width_cm"].fillna(data["product_width_cm"].median(), inplace=True)
             
             data = data.select_dtypes(include=[np.number])
-            cols_to_drop = ["customer_zip_code_prefix","order_item_id"]
-            data = data.drop(cols_to_drop, axis=1)
             return data
+        
         except Exception as e:
             logging.error(f"Error in preprocessing data")
             logging.error(e)

@@ -29,4 +29,3 @@ def ingest_df(csv_path: str) -> pd.DataFrame:
         raise e
         
     
-    # return IngestData(csv_path).get_data()

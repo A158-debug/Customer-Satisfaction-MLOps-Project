@@ -4,4 +4,5 @@ from pipelines.training_pipeline import train_pipeline
 if __name__ == '__main__':
     # Run the pipeline
     # print(Client.activate_stack.experiment_tracker.get_tracking_uri())
-    train_pipeline("D:\Projects\MLOps\Customer-Satisfaction-MLOps\data\olist_customers_dataset.csv")
+    data_path = './data/olist_customers_dataset.csv'
+    train_pipeline(data_path)

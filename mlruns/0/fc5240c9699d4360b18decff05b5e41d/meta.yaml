@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/Customer-Satisfaction-MLOps/mlruns/0/fc5240c9699d4360b18decff05b5e41d/artifacts
+end_time: 1703291999082
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fc5240c9699d4360b18decff05b5e41d
+run_name: wistful-rook-426
+run_uuid: fc5240c9699d4360b18decff05b5e41d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1703291997585
+status: 3
+tags: []
+user_id: '91875'
